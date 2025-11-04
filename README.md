@@ -44,3 +44,6 @@ kubectl get deployment <deployment name> -o yaml
 
 ### delete the deployment or service using config file 
 kubectl delete -f <file path>
+
+### assign external ip in minikute to a service 
+minikue service <service name>
