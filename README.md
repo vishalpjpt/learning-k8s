@@ -34,7 +34,7 @@ kubectl exec -it <pod name> -- bin/bash
 kubectl delete deployment <deployment name>
 
 ### get apply a deployment file
-kubectl apply -f <file name>
+kubectl apply -f <file name> --namespace=<ns name>
 
 ### get service decriptoin 
 kubectl describe service <servive name>
@@ -47,3 +47,23 @@ kubectl delete -f <file path>
 
 ### assign external ip in minikute to a service 
 minikue service <service name>
+
+### get namespace
+kubectl get namespace
+
+### kube-public namespace conatains informat that are publically available without auth eg. cluster-info
+kubectl get cluster-info
+
+### create namespace 
+kubectl create namespace <namespace name>
+
+Note: 
+* Config map and secrets of one namespace can't be accessed in other namespace  
+* Services can be accessed accross multiple namespaces 
+* vlumnes and nodes can be accessed globally in all namespaces 
+
+### Enable ingress on minikute
+minikube addons enable ingress
+
+### get ingress detail 
+kubecelt get ingress -n <namespace name>
