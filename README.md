@@ -67,3 +67,9 @@ minikube addons enable ingress
 
 ### get ingress detail 
 kubecelt get ingress -n <namespace name>
+
+### get details of ingress controller 
+kubectl describe ingress <ingress name> -n <ns name>
+
+### do a dry run and or generate a yaml file 
+kubectl run redis --image=redis --dry-run=client -o yaml > redis.yaml
